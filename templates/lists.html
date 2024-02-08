@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block content %}
+    {% if listtype not in ["ul", "ol"] %}
+        <h2>Неверный формат списка</h2>
+    {% else %}
+        {% if listtype == "ol" %}
+            <h2>Список профессий</h2>
+            <ol>
+                {% for i in list %}
+                    <li>{{i}}</li>
+                {% endfor %}
+            </ol>
+        {% else %}
+            <h2>Список профессий</h2>
+            <ul>
+                {% for i in list %}
+                    <li>{{i}}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+    {% endif %}
+{% endblock %}
